@@ -1,155 +1,120 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-		<title>Awesome</title>
-		
-		<!-- css -->
-		
-		<!--  google fonts  -->
-		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+<head>
+  <title>Contact Form</title>
+  <style>
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
-		<link rel="stylesheet" type="text/css" href="css/custom.css">
+    .form-group {
+      margin-bottom: 15px;
+    }
 
-	</head>
-	<body onload="countdown(year,month,day,hour,minute)">
-		<div class="body-wrapper">
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
 
-			<!--   begin of header section   -->
-			<section class="header" id="overlay-1">
-				<div class="header-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 text-center">
-								<div class="theme-name">
-									<a href="#" class="title">Awesome</a>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 text-center">
-								<div class="header-text">
-									<p class="service-text">our awesome products and services are</p>
-									<p class="coming">coming soon</p>
-								</div>
-							</div>
-						</div>
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+    }
 
-						<!--  begin of counter  -->
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
 
-						<div class="row">
-							<div class="col-md-12">
-								<div class="numbers" id="count2"></div>
-							</div>
-							<div class="col-md-12 counter1 text-center" id="spacer1">
-								<div class="col-md-4 col-xs-3 col-sm-4 day numbers" id="dday"></div>
-								<div class="col-md-2 col-xs-3 col-sm-2 hr numbers" id="dhour"></div>
-								<div class="col-md-2 col-xs-3 col-sm-2 min numbers" id="dmin"></div>
-								<div class="col-md-4 col-xs-3 col-sm-4 sec numbers" id="dsec"></div>
-							</div>
-							<div class="col-md-12 counter2 text-center" id="spacer2">
-								<div class="col-md-4 col-xs-3 col-sm-4 day title" id="days">day</div>
-								<div class="col-md-2 col-xs-3 col-sm-2 hr title" id="hours">hr</div>
-								<div class="col-md-2 col-xs-3 col-sm-2 min title" id="minutes">min</div>
-								<div class="col-md-4 col-xs-3 col-sm-4 sec title" id="seconds">sec</div>
-							</div>
-						</div>
-						<!--  end of counter -->
-					</div> <!--  end of .container  -->
-				</div><!-- end of .header-wrapper  -->
-			</section>
-			<!--   end of header section     -->
+    .form-group button:hover {
+      background-color: #45a049;
+    }
 
-			<!--   begin of newsletter section  -->
-			<section class="newsletter text-center">
-				<div class="newsletter-wrapper">
-					<div class="container">
-						<div class="row">
-							<h2 class="newsletter-text">subscribe and stay tuned with us</h2>
-							<div class="col-md-8 col-md-offset-2">
-								<form>
-	  								<div class="form-group">
-	    								<div class="input-group">
-	      									<div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
-	      									<input type="text" class="form-control" placeholder="Enter Your Email Here...">
-	    								</div>
-	    								<button class="subsribe-btn">Subscribe Now</button>
-	  								</div>
-								</form>
-								<p class="spam">
-									<i class="fa fa-bookmark"></i>We'll never spam you.
-								</p>
-							</div>
-						</div>
-					</div><!--  end of .container  -->
-				</div> <!--  end of .newssletter-wrapper  -->
-			</section>
-			<!--   end of newsletter section  -->
+    .form-message {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Contact Form</h2>
+    <div class="form-message" id="form-message"></div>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 
-			<!--   begin of social-media section  -->
-			<section class="social-media text-center">
-				<div class="social-media-wrapper">
-					<div class="container">
-						<div class="row">
-							<h2 class="social-media-text">get updates from social media</h2>
-							<div class="col-md-8 col-md-offset-2">
-								<div class="social-links">
-									<a target="_blank" href="#" title="Facebook">
-										<i class="fa fa-facebook"></i>
-									</a>
-									<a target="_blank" href="#" title="Twitter">
-										<i class="fa fa-twitter"></i>
-									</a>
-									<a target="_blank" href="#" title="Google+">
-										<i class="fa fa-google-plus"></i>
-									</a>
-									<a target="_blank" href="#" title="Pinterest">
-										<i class="fa fa-pinterest"></i>
-									</a>
-									<a target="_blank" href="" title="Instagram">
-										<i class="fa fa-instagram"></i>
-									</a>
-								</div>
-							</div>
-							<div class="clear-fix"></div>
-						</div>
-					</div>
-				</div><!--  end of .social-media-wrapper  -->
-			</section>
-			<!--   end of social-media section   -->
+  <script>
+  // Update this variable with your API Gateway URL
+  var apiGatewayUrl = 'https://elbty7utx6.execute-api.ap-south-1.amazonaws.com/prod';
 
-			<!--   begin of footer  section  -->
-			<section class="footer">
-				<div class="footer-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6">
-								<p class="copy-right text-center">&copy; 2015 Awesome. All rights reserved.</p>
-							</div>
-							<div class="col-md-6">
-								<p class="develop text-center">Developed by <a href="http://themewagon.com">ThemeWagon <sup>TM</sup></a></p>
-							</div>
-						</div>
-					</div>
-				</div><!--  end of .footer-wrapper  -->
-			</section>
-			<!--   end of footer section  -->
-		</div>
-		
-		<!--  js files -->
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/timer.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
-	
-	</body>
-</html>
+    // Generate a random ID
+    var id = generateRandomId();
+
+    var form = event.target;
+    var formData = new FormData(form);
+
+    // Create the contact object with the generated ID
+    var contact = {
+      id: id,
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+	console.log(contact)
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', apiGatewayUrl, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        var messageElement = document.getElementById('form-message');
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+		  console.log(response )
+          messageElement.textContent = response.message;
+          form.reset();
+        } else {
+          messageElement.textContent = 'Submitted!!';
+        }
+      }
+    };
+
+    var contactJson = JSON.stringify(contact);
+    xhr.send(contactJson);
+	console.log(contactJson)
+  });
+
+  // Function to generate a random ID
+  function generateRandomId() {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  }
+  </script>
+
+</body>
